@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("api")
@@ -23,6 +25,11 @@ public class MainController {
     @GetMapping("/user")
     public ResponseEntity<Mono<Map>> getUserInfo(){
         return ResponseEntity.ok(mainService.getUserInfo("JoaoPauloQC"));
+    }
+
+    @GetMapping("/user/repos")
+    public ResponseEntity<Mono<Object>> getUserRepos(){
+        return ResponseEntity.ok(mainService.getRepos("JoaoPauloQC"));
     }
 
 }
