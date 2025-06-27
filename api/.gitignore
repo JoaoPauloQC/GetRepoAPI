@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 !**/src/main/java/com/github_projects/api/data/PersonalData.java
-api/src/main/java/com/github_projects/api/data/PersonalData.jar
+!**/src/main/java/com/github_projects/api/data/PersonalData.jar
 
 ### STS ###
 .apt_generated
