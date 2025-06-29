@@ -49,12 +49,15 @@ OBS: You have to run it on your own machine
 - ENDPOINT: I'm taking the '/user/languages/bytesperlang' for example
 
 
-So, we're passing the params in this logic:
+## So, we're passing the params in this logic:
+<br>
 
-"URL" + "?" + (PARAMS)
+## <b>"URL" + "?" + (PARAMS)<b/>
 
-So in (PARAMS) you can pass one by one by:
-param1=param1&param2=param2&...
+<br>
 
-Then, in a situation I can acess infos about "Restaurant" repo I will put:
-http://localhost:XXXX/api/user/languages/bytesperlang<i>?<i/><b>reponame=Restaurant&username=JoaoPauloQC<b/>
+### In (PARAMS) you can pass one by one by:
+### param1=param1&param2=param2&...
+
+### Then, in a situation I can acess infos about "Restaurant" repo I will put:
+#### http://localhost:XXXX/api/user/languages/bytesperlang<i>?<i/><b>reponame=Restaurant&username=JoaoPauloQC<b/>
