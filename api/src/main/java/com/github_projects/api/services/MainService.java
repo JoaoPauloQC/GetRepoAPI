@@ -35,9 +35,17 @@ public class MainService {
     }
 
     public Mono<HashMap> getRepoLanguages(String reponame , String username){
-
+        Mono<Integer> totalbytes;
         Mono<HashMap> languagehashmap = githubClient.getLanguage(reponame, username);
+        totalbytes = languagehashmap.map(language -> language.values().stream().mapToInt(value -> (int) value).sum());
         return languagehashmap;
+    }
+
+    public Mono<Integer> getRepoTotalBytes(String reponame , String username){
+        Mono<Integer> totalbytes;
+        Mono<HashMap> languagehashmap = githubClient.getLanguage(reponame, username);
+        totalbytes = languagehashmap.map(language -> language.values().stream().mapToInt(value -> (int) value).sum());
+        return totalbytes;
     }
 
 
