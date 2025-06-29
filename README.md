@@ -1,5 +1,7 @@
 # Interactive API with github made for extra datas and simplificate functions.
 
+<br>
+
 ### What can I do?
 
 <br>
@@ -10,6 +12,7 @@
 - Get totalBytes of repos
 - Get percentage of languages on a repo
 
+<br>
 
 ### How to use?
 
@@ -17,14 +20,20 @@ The base url is 'http://localhost:XXXX/api'
 
 OBS: You have to run it on your own machine
 
-
+<br>
 
 ### Get Started
+
+<br>
 
 ## Now we have the base url, know that every endpoint I show you is going to start with the base
 ## So if I say the endpoint is "/yxz" the entire url is gonna be "http://localhost:XXXX/api/xyz"
 
+<br>
+
 ### RETURN / DATA
+
+<br>
 
 ### Every endpoint return has the same data format, a json with the content.
 ### Just like:
@@ -32,6 +41,8 @@ OBS: You have to run it on your own machine
 <br>
 
 ## Endpoints
+
+<br>
 
 | Endpoint                     | Params             | Result                                                 |
 |------------------------------|--------------------|--------------------------------------------------------|
@@ -56,8 +67,8 @@ OBS: You have to run it on your own machine
 
 <br>
 
-### In (PARAMS) you can pass one by one by:
+### In (PARAMS) you can pass one by one with:
 ### param1=param1&param2=param2&...
 
-### Then, in a situation I can acess infos about "Restaurant" repo I will put:
+### Then, in a situation I can acess infos about "Restaurant" repo I can put:
 #### http://localhost:XXXX/api/user/languages/bytesperlang<i>?<i/><b>reponame=Restaurant&username=JoaoPauloQC<b/>
