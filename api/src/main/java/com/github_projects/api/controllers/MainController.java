@@ -24,24 +24,29 @@ public class MainController {
 
 
     @GetMapping("/user")
-    public ResponseEntity<Mono<Map>> getUserInfo(){
-        return ResponseEntity.ok(mainService.getUserInfo("JoaoPauloQC"));
+    public ResponseEntity<Mono<Map>> getUserInfo( @RequestParam String username){
+        return ResponseEntity.ok(mainService.getUserInfo(username));
     }
 
     @GetMapping("/user/repos")
-    public Flux<Repo> getUserRepos(){
-        return mainService.getRepos("JoaoPauloQC");
+    public Flux<Repo> getUserRepos( @RequestParam String username){
+        return mainService.getRepos(username);
         //return ResponseEntity.ok(mainService.getRepos("JoaoPauloQC"));
     }
 
     @GetMapping("/user/languages")
-    public Mono<HashMap> getlanguages(@RequestParam String reponame){
-        return mainService.getRepoLanguages(reponame , "JoaoPauloQC");
+    public Mono<HashMap> getlanguages(@RequestParam String reponame,  @RequestParam String username){
+        return mainService.getRepoLanguages(reponame , username);
     }
 
-    @GetMapping("/user/languages/bytes")
-    public Mono<Integer> getTotalBytes(@RequestParam String reponame){
-        return mainService.getRepoTotalBytes(reponame , "JoaoPauloQC");
+    @GetMapping("/user/languages/totalbytes")
+    public Mono<Integer> getTotalBytes(@RequestParam String reponame ,  @RequestParam String username){
+        return mainService.getRepoTotalBytes(reponame , username);
+    }
+
+    @GetMapping("/user/languages/bytesperlang")
+    public Mono<HashMap<String,Double>> getBytesPerLangs(@RequestParam String reponame, @RequestParam String username){
+        return mainService.getBytesPerLang(reponame , username);
     }
 
 

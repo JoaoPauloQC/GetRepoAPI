@@ -48,5 +48,28 @@ public class MainService {
         return totalbytes;
     }
 
+    public Mono<HashMap<String,Double>> getBytesPerLang(String reponame , String username){
+
+        Mono<Integer> totalbytes;
+        Mono<HashMap> languagehashmap = githubClient.getLanguage(reponame, username);
+        totalbytes = languagehashmap.map(language -> language.values().stream().mapToInt(value -> (int) value).sum());
+        Mono<HashMap<String,Double>> newlanguagehashmap = languagehashmap.zipWith(totalbytes).map(tuple -> {
+
+            HashMap<String,Integer> newlanguagemap = tuple.getT1();
+            Integer total = tuple.getT2();
+
+            HashMap <String, Double> languagepercentmap = new HashMap<>();
+
+            for (Map.Entry<String,Integer> entry : newlanguagemap.entrySet()){
+                languagepercentmap.put(entry.getKey(),((double)entry.getValue()/(double) total));
+            }
+
+            return languagepercentmap;
+
+            });
+        return newlanguagehashmap;
+
+
+    }
 
 }
